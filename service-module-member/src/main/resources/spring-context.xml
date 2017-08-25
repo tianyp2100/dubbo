@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config />
+ 	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
+    <context:component-scan base-package="com.hxwisec.member.*,com.hxwisec.base.*,com.hxwisec.alliance.*,com.hxwisec.auth.*" />
+	
+  	<!--  配置文件 -->
+	<bean id="configBean" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath*:/jdbc.properties</value>
+				<value>classpath*:/dubbo.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding">
+			<value>UTF-8</value>
+		</property>
+	</bean>
+ 	
+	<!-- 定义Myibatis,dao可自动注入 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.hxwisec.member.dao,com.hxwisec.base.dao,com.hxwisec.alliance.dao,com.hxwisec.auth.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	<!-- 创建SqlSessionFactory，同时指定数据源 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations">
+			<list>
+				<value>classpath*:com/hxwisec/member/xml/*Mapper.xml</value>
+				<value>classpath*:com/hxwisec/base/xml/*Mapper.xml</value>
+				<value>classpath*:com/hxwisec/alliance/xml/*Mapper.xml</value>
+				<value>classpath*:com/hxwisec/auth/xml/*Mapper.xml</value>
+			</list>
+		</property>
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>用户服务模块接口(由于provider和customer都会依赖接口实现RPC所有统一管理)</description>
+
+    <parent>
+        <groupId>me.loveshare</groupId>
+        <artifactId>parent</artifactId>
+        <relativePath>../parent/pom.xml</relativePath>
+        <version>1.0.0</version>
+    </parent>
+
+    <groupId>me.loveshare</groupId>
+    <artifactId>common-module-interface</artifactId>
+    <version>${common-module-interface.version}</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hxwisec</groupId>
+            <artifactId>common-module-entity</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
