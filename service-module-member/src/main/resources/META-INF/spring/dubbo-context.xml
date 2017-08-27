@@ -4,8 +4,6 @@
 	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-
-
 	http://code.alibabatech.com/schema/dubbo  
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
@@ -29,10 +27,10 @@
 	<dubbo:protocol name="dubbo" port="${dubbo.protocol.member.port}" />
 
 	<!-- 具体的实现bean -->
-	<bean id="registerService" class="com.hxwisec.member.service.impl.RegisterServiceImpl" />
+	<bean id="memberService" class="me.loveshare.member.service.impl.MemberServiceImpl" />
 
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="com.hxwisec.member.service.RegisterService" ref="registerService" timeout="${dubbo.member.timeout}" version="${dubbo.member.version}" />
+	<dubbo:service interface="me.loveshare.member.service.MemberService" ref="memberService" timeout="${dubbo.member.timeout}" version="${dubbo.member.version}" />
 	<!--
 		dubbo:service标签的一些属性说明：
 	     1）interface服务接口的路径
@@ -42,22 +40,18 @@
 	 -->
 
 	 <!-- redis服务  服务间调用 -->
- 	<dubbo:reference id="stringRedisService" group="stringRedisService" interface="com.hxwisec.redis.service.StringRedisService" version="${dubbo.redis.version}"  />
-	<!-- <dubbo:reference id="objectRedisService" interface="com.hxwisec.redis.service.ObjectRedisService" url="${service.module.redis.url}" /> -->
-	<!-- <dubbo:reference id="sessionCacheRedisService" interface="com.hxwisec.redis.service.SessionCacheRedisService" url="dubbo://192.168.1.119:20881" /> -->
+ 	<!--<dubbo:reference id="stringRedisService" group="stringRedisService" interface="me.loveshare.redis.service.StringRedisService" version="${dubbo.redis.version}"  />-->
+	<!-- <dubbo:reference id="objectRedisService" interface="me.loveshare.redis.service.ObjectRedisService" url="${service.module.redis.url}" /> -->
+	<!-- <dubbo:reference id="sessionCacheRedisService" interface="me.loveshare.redis.service.SessionCacheRedisService" url="dubbo://192.168.1.119:20881" /> -->
 
 	<!-- 或 -->
 	<!-- 扫描注解包路径，多个包用逗号分隔，不写pacakge表示扫描当前applicationContext中所有的类 -->
 	<!-- http://www.360doc.com/content/15/0327/21/10675863_458574100.shtml -->
-	<!-- <dubbo:annotationpackage="com.hxwisec.member.service"/> -->
+	<!-- <dubbo:annotationpackage="me.loveshare.member.service"/> -->
 	<!-- 或//但spring声明式事务冲突 -->
 	<!-- <dubbo:annotation />
-	<context:component-scan base-package="com.hxwisec.member.service">
+	<context:component-scan base-package="me.loveshare.member.service">
 		<context:include-filter type="annotation" expression="com.alibaba.dubbo.config.annotation.Service" />
 	</context:component-scan> -->
 
-	<!-- 其他配置文件导入 -->
-	<import resource="classpath*:spring-context.xml" />
-	<import resource="classpath*:datasource-context.xml" />
-	<import resource="classpath*:transaction-context.xml" />
 </beans>

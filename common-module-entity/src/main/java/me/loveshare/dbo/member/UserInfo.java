@@ -1,4 +1,4 @@
-package main.java.me.loveshare.dbo.member;
+package me.loveshare.dbo.member;
 
 import java.util.Date;
 

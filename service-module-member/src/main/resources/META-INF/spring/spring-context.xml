@@ -8,8 +8,9 @@
 	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 	
 	<context:annotation-config />
+	<!--多个逗号隔开-->
  	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
-    <context:component-scan base-package="com.hxwisec.member.*,com.hxwisec.base.*,com.hxwisec.alliance.*,com.hxwisec.auth.*" />
+    <context:component-scan base-package="me.loveshare.member.*" />
 	
   	<!--  配置文件 -->
 	<bean id="configBean" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -26,7 +27,8 @@
  	
 	<!-- 定义Myibatis,dao可自动注入 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.hxwisec.member.dao,com.hxwisec.base.dao,com.hxwisec.alliance.dao,com.hxwisec.auth.dao" />
+		<!--多个逗号隔开-->
+		<property name="basePackage" value="me.loveshare.member.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	
@@ -35,13 +37,11 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath*:com/hxwisec/member/xml/*Mapper.xml</value>
-				<value>classpath*:com/hxwisec/base/xml/*Mapper.xml</value>
-				<value>classpath*:com/hxwisec/alliance/xml/*Mapper.xml</value>
-				<value>classpath*:com/hxwisec/auth/xml/*Mapper.xml</value>
+				<value>classpath*:me/loveshare/member/xml/*Mapper.xml</value>
+				<!--<value>classpath*:me/loveshare/member/xml/*Mapper.xml</value>-->
 			</list>
 		</property>
-		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="configLocation" value="classpath:META-INF/spring/mybatis-config.xml"></property>
 	</bean>
 	
 </beans>

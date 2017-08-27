@@ -8,9 +8,9 @@
     </appender>
 
     <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${logback.file.path}/service-module-member/service-module-member.log</file>
+        <file>${logback.file.path}/member-api/member-api.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${logback.file.path}/service-module-member/service-module-member.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${logback.file.path}/member-api/member-api.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
         <encoder>
             <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} - %-5level - ${PID} - [%-32.32thread] - %-64.64logger{64} : %msg%n
@@ -18,11 +18,8 @@
         </encoder>
     </appender>
 
-    <logger name="me.loveshare.*" level="${log.level}"/>
+    <logger name="me.loveshare" level="${log.level}"/>
 
-    <logger name="org.apache.ibatis" level="${third.party.log.level}" />
-    <logger name="java.sql" level="${third.party.log.level}" />
-    
     <logger name="org.xnio" level="${third.party.log.level}"/>
     <logger name="io.undertow" level="${third.party.log.level}"/>
     <logger name="com.alibaba.dubbo" level="${third.party.log.level}" />

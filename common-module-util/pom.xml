@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>实体类</description>
+    <description>工具类</description>
 
     <parent>
         <groupId>me.loveshare</groupId>
@@ -12,25 +12,21 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>common-module-entity</artifactId>
-    <version>${common-module-entity.version}</version>
+    <artifactId>common-module-util</artifactId>
+    <version>${common-module-util.version}</version>
     <packaging>jar</packaging>
 
     <dependencies>
-        <!-- Api doc -->
+        <!--Project dependencies-->
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
+            <groupId>me.loveshare</groupId>
+            <artifactId>common-module-entity</artifactId>
         </dependency>
-        <!--Json-->
+        <!-- Servlet -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-        <!--Tools-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
     </dependencies>
+
 </project>

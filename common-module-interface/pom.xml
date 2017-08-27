@@ -19,7 +19,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.hxwisec</groupId>
+            <groupId>me.loveshare</groupId>
             <artifactId>common-module-entity</artifactId>
         </dependency>
     </dependencies>

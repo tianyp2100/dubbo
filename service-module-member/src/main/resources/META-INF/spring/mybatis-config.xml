@@ -2,7 +2,7 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">  
 <configuration>  
     <typeAliases>
-  	   <package name="com.hxwisec.module.entity"/>
-  	   <package name="com.hxwisec.base.entity"/>
+  	   <package name="me.loveshare.dbo.member"/>
+  	   <!--<package name="me.loveshare.dbo.member"/>-->
  	</typeAliases>
 </configuration> 
