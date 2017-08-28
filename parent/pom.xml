@@ -239,7 +239,7 @@
             <id>dev</id>
             <properties>
                 <!-- Dubbo -->
-                <dubbo.registry.zookeeper.address>zookeeper://192.168.2.204:2181</dubbo.registry.zookeeper.address>
+                <dubbo.registry.zookeeper.address>zookeeper://192.168.1.151:2181</dubbo.registry.zookeeper.address>
                 <dubbo.owner>timespacexstar</dubbo.owner>
                 <!-- Port -->
                 <dubbo.protocol.member.port>6101</dubbo.protocol.member.port>
@@ -250,11 +250,11 @@
                 <dubbo.member.timeout>12000</dubbo.member.timeout>
                 <!-- logger -->
                 <log.level>INFO</log.level>
-                <third.party.log.level>INFO</third.party.log.level>
+                <third.party.log.level>ERROR</third.party.log.level>
                 <logback.file.path>/Users/tony_tian/develop/logs</logback.file.path> <!-- tail no '/' -->
                 <!--用户数据库-->
                 <jdbc.type.1>mysql</jdbc.type.1>
-                <jdbc.url.1>jdbc:mysql://192.168.1.230:3306/loveshare?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;zeroDateTimeBehavior=convertToNull&amp;amp;autoReconnect=true&amp;amp;useSSL=false&amp;amp;oldsyntax=true</jdbc.url.1>
+                <jdbc.url.1>jdbc:mysql://192.168.1.151:3306/loveshare?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;zeroDateTimeBehavior=convertToNull&amp;amp;autoReconnect=true&amp;amp;useSSL=false&amp;amp;oldsyntax=true</jdbc.url.1>
                 <jdbc.driver.1>com.mysql.jdbc.Driver</jdbc.driver.1>
                 <jdbc.username.1>dba</jdbc.username.1>
                 <jdbc.password.1>123456</jdbc.password.1>

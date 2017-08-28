@@ -8,6 +8,7 @@ import me.loveshare.dto.member.UserInfoDTO;
 import me.loveshare.member.dao.UserInfoMapper;
 import me.loveshare.member.service.MemberService;
 import me.loveshare.util.common.DBUtils;
+import me.loveshare.util.common.JsonUtils;
 import me.loveshare.vo.common.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,7 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public JsonResult list(Query query) {
+        log.info("用户列表加载参数:" + JsonUtils.object2string(query));
         //数据库分页参数处理
         query.initPageParams();
 
@@ -44,6 +46,6 @@ public class MemberServiceImpl implements MemberService {
         //封装页面数据
         Page<UserInfoDTO> page = Page.page(total, list, query.getPageIndex(), query.getPageSize());
 
-        return JsonResultMethod.code_200("加载列表数据成功", page);
+        return JsonResultMethod.code_200("加载用户列表数据成功", page);
     }
 }

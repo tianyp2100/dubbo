@@ -2,13 +2,15 @@ package me.loveshare.dto.member;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Tony on 2017/8/1.
  */
 @Data
-public class UserInfoDTO {
+public class UserInfoDTO implements Serializable {
+    private static final long serialVersionUID = -7192266111744705905L;
     /**
      * 主键
      */
