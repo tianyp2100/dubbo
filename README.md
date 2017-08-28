@@ -77,6 +77,8 @@ http://192.168.1.151:6201/userinfo/list.json
       cd ..
       bin/startup.sh
       tail -f logs/catalina.out
+ 5.8：web监控页面
+      http://192.168.1.151:8080/dubbokeeper-ui-1.0.1
 ```
 ### 附录.
 ![数据请求截图](http://loveshare.oss-cn-shanghai.aliyuncs.com/universal/image/github/dubbo/1.jpg)
