@@ -35,9 +35,9 @@ https://github.com/typa1/docs/blob/master/Installer-Manual-ubuntu-14.04.5-zookee
 ```
 #### 3.启动服务消费者
 ```
-root@ivm:/home/test1# nohup java -jar member-api-1.0.0.jar &
+nohup java -jar member-api-1.0.0.jar &
 ```
-#### 4.测试数据接口（附录1:图片）
+#### 4.测试数据接口（附录:图片）
 ```
 http://192.168.1.151:6201/userinfo/list.json
 ```
@@ -58,7 +58,7 @@ http://192.168.1.151:6201/userinfo/list.json
      mkdir dubbo-monitor
      tar zxvf mysql-dubbokeeper-server.tar.gz -C dubbo-monitor
      cd dubbo-monitor/
-     vim conf/dubbo-mysql.properties (修改以下参数)
+     vim conf/dubbo-mysql.properties (修改以下参数：自定义)
           dubbo.registry.address=zookeeper://192.168.1.151:2181
           dubbo.monitor.mysql.url=jdbc:mysql://192.168.1.151:3306/dubbo-monitor
           dubbo.monitor.mysql.username=dba
@@ -67,8 +67,16 @@ http://192.168.1.151:6201/userinfo/list.json
      chmod u+x start-mysql.sh 
      dos2unix start-mysql.sh 
      nohup ./start-mysql.sh &
-5.7: 启动监控web
-   
-
+5.7: 启动监控web（需要安装tomcat）（附录:图片）
+      cp -R dubbokeeper-ui-1.0.1.war apache-tomcat-8.5.5/webapps/
+      apt-get install unzip
+      unzip dubbokeeper-ui-1.0.1.war -d dubbokeeper-ui-1.0.1
+      vim dubbokeeper-ui-1.0.1/WEB-INF/classes/dubbo.properties (修改以下参数：自定义)
+          dubbo.registry.address=zookeeper://192.168.1.151:2181
+          peeper.zookeepers=192.168.1.151:2181
+      cd ..
+      bin/startup.sh
+      tail -f logs/catalina.out
 ```
-#### 1.
+### 附录.
+
