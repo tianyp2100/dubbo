@@ -14,9 +14,9 @@ DUBBO
 |Maven父管理|parent|Maven的顶级父统一管理maven模板和版本
 |DUBBO服务提供者|service-module-member|基于spring实现的MySQL、Druid、MyBatis等，服务提供者
 ### 服务使用说明
-#### 1.安装推荐注册中心Zookeeper: ![安装文档](https://github.com/typa1/docs/blob/master/Zookeeper-3.4.8.md)
+#### 1.安装推荐注册中心Zookeeper: ![安装文档](https://github.com/loveshareme/docs/blob/master/Zookeeper-3.4.8.md)
 ```
-https://github.com/typa1/docs/blob/master/Zookeeper-3.4.8.md
+https://github.com/loveshareme/docs/blob/master/Zookeeper-3.4.8.md
 ```
 #### 2.启动服务提供者
 ```
