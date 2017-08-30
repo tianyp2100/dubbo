@@ -1,8 +1,8 @@
 package me.loveshare.member.dao;
 
-import me.loveshare.dbo.member.UserInfo;
-import me.loveshare.dto.member.UserInfoDTO;
-import me.loveshare.vo.common.Query;
+import me.loveshare.entity.dbo.member.UserInfo;
+import me.loveshare.entity.dto.member.UserInfoDTO;
+import me.loveshare.entity.vo.common.Query;
 
 import java.util.List;
 

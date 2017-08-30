@@ -1,4 +1,4 @@
-package me.loveshare.bo.common;
+package me.loveshare.entity.bo.common;
 
 /**
  * Created by Tony on 2017/7/25.

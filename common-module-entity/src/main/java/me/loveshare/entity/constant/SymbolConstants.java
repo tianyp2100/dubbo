@@ -1,4 +1,4 @@
-package me.loveshare.constant;
+package me.loveshare.entity.constant;
 
 /**
  * 符号

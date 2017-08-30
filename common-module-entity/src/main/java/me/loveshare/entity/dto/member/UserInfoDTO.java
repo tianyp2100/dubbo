@@ -1,4 +1,4 @@
-package me.loveshare.dto.member;
+package me.loveshare.entity.dto.member;
 
 import lombok.Data;
 

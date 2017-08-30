@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="me.loveshare.member.dao.UserInfoMapper" >
-  <resultMap id="BaseResultMap" type="me.loveshare.dbo.member.UserInfo" >
+  <resultMap id="BaseResultMap" type="me.loveshare.entity.dbo.member.UserInfo" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="compellation" property="compellation" jdbcType="VARCHAR" />
     <result column="sex" property="sex" jdbcType="CHAR" />
@@ -32,7 +32,7 @@
     delete from user_info
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="me.loveshare.dbo.member.UserInfo" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insert" parameterType="me.loveshare.entity.dbo.member.UserInfo" useGeneratedKeys="true" keyProperty="id">
     insert into user_info (id, compellation, sex, 
       age, birthday, zodiac, 
       constellation, blood_type, birthplace, 
@@ -71,7 +71,7 @@
   </select>
   <!--总条数统计 结束-->
   <!--分页查询数据 开始-->
-    <resultMap id="BaseResultMap_Page" type="me.loveshare.dto.member.UserInfoDTO" >
+    <resultMap id="BaseResultMap_Page" type="me.loveshare.entity.dto.member.UserInfoDTO" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="compellation" property="compellation" jdbcType="VARCHAR" />
         <result column="sex" property="sex" jdbcType="CHAR" />
@@ -89,14 +89,14 @@
         t1.id, t1.compellation, t1.sex, t1.age, t1.birthday, t1.zodiac, t1.constellation, t1.blood_type, t1.birthplace, t1.edu_degree, t1.avatar, t1.about_me
     </sql>
     <!--limit分页-->
-    <select id="selectUserInfoPageLimit" resultMap="BaseResultMap_Page" parameterType="me.loveshare.vo.common.Query">
+    <select id="selectUserInfoPageLimit" resultMap="BaseResultMap_Page" parameterType="me.loveshare.entity.vo.common.Query">
         SELECT
           <include refid="Base_Column_List_Page" />
         FROM user_info AS t1 WHERE t1.is_deleted = 0
         LIMIT #{pageIndex,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER};
     </select>
     <!--查询id再通过id分页-->
-    <select id="selectUserInfoPageJoinId" resultMap="BaseResultMap_Page" parameterType="me.loveshare.vo.common.Query">
+    <select id="selectUserInfoPageJoinId" resultMap="BaseResultMap_Page" parameterType="me.loveshare.entity.vo.common.Query">
         SELECT
             <include refid="Base_Column_List_Page" />
          FROM user_info AS t1 JOIN
@@ -104,7 +104,7 @@
           ON t1.id = t2.id
     </select>
   <!--分页查询数据 结束-->
-  <insert id="insertSelective" parameterType="me.loveshare.dbo.member.UserInfo" useGeneratedKeys="true" keyProperty="id">
+  <insert id="insertSelective" parameterType="me.loveshare.entity.dbo.member.UserInfo" useGeneratedKeys="true" keyProperty="id">
     insert into user_info
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -201,7 +201,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="me.loveshare.dbo.member.UserInfo" >
+  <update id="updateByPrimaryKeySelective" parameterType="me.loveshare.entity.dbo.member.UserInfo" >
     update user_info
     <set >
       <if test="compellation != null" >
@@ -249,7 +249,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="me.loveshare.dbo.member.UserInfo" >
+  <update id="updateByPrimaryKey" parameterType="me.loveshare.entity.dbo.member.UserInfo" >
     update user_info
     set compellation = #{compellation,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=CHAR},

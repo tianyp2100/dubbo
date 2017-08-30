@@ -1,7 +1,7 @@
 package me.loveshare.member.service;
 
-import me.loveshare.bo.common.JsonResult;
-import me.loveshare.vo.common.Query;
+import me.loveshare.entity.bo.common.JsonResult;
+import me.loveshare.entity.vo.common.Query;
 
 /**
  * Created by Tony on 2017/8/25.

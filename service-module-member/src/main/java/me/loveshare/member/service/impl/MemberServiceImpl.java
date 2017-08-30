@@ -1,15 +1,15 @@
 package me.loveshare.member.service.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import me.loveshare.bo.common.JsonResult;
-import me.loveshare.bo.common.JsonResultMethod;
-import me.loveshare.bo.common.Page;
-import me.loveshare.dto.member.UserInfoDTO;
+import me.loveshare.entity.bo.common.JsonResult;
+import me.loveshare.entity.bo.common.JsonResultMethod;
+import me.loveshare.entity.bo.common.Page;
+import me.loveshare.entity.dto.member.UserInfoDTO;
 import me.loveshare.member.dao.UserInfoMapper;
 import me.loveshare.member.service.MemberService;
 import me.loveshare.util.common.DBUtils;
 import me.loveshare.util.common.JsonUtils;
-import me.loveshare.vo.common.Query;
+import me.loveshare.entity.vo.common.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

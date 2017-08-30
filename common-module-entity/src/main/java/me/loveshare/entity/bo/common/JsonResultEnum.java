@@ -1,4 +1,4 @@
-package me.loveshare.bo.common;
+package me.loveshare.entity.bo.common;
 
 /**
  * 业务或数据处理结果结果json格式封装传递实体类的辅助类

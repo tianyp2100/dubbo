@@ -1,4 +1,4 @@
-package me.loveshare.bo.common;
+package me.loveshare.entity.bo.common;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.annotation.JsonInclude;

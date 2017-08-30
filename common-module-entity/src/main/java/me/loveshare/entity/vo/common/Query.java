@@ -1,7 +1,7 @@
-package me.loveshare.vo.common;
+package me.loveshare.entity.vo.common;
 
 import io.swagger.annotations.ApiModelProperty;
-import me.loveshare.bo.common.Page;
+import me.loveshare.entity.bo.common.Page;
 
 import java.io.Serializable;
 

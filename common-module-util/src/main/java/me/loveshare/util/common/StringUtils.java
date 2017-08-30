@@ -1,6 +1,6 @@
 package me.loveshare.util.common;
 
-import me.loveshare.constant.DBdefaultConstants;
+import me.loveshare.entity.constant.DBdefaultConstants;
 
 /**
  * Created by Tony on 2017/3/28.

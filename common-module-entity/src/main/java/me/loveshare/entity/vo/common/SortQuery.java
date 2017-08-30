@@ -1,4 +1,4 @@
-package me.loveshare.vo.common;
+package me.loveshare.entity.vo.common;
 
 import java.io.Serializable;
 import java.util.List;
