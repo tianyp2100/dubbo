@@ -18,7 +18,9 @@ DUBBO
 ```
 https://github.com/loveshareme/docs/blob/master/Zookeeper-3.4.8.md
 ```
-#### 2.启动服务提供者，注: 使用parent编译maven的各个子模块，然后：
+#### 2.启动服务提供者：
+##### 注1：修改parent/pom.xml下dubbo.registry.zookeeper.address的地址
+##### 注2: 使用parent编译maven的各个子模块，然后：
 ```
 2.1:本地直接Run: service-module-member\src\main\java\me\loveshare\member\StartMemberService.java
 2.2:服务器:
